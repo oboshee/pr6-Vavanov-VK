@@ -4,6 +4,7 @@ Java SE 21+, без Maven/JUnit.
 
 ## Сборка и запуск
 
+./run_selfcheck.sh
 
 
 ## Вариант 4
