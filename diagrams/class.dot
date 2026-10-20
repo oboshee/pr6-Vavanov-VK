@@ -1,0 +1,13 @@
+digraph ClassDiagram {
+    rankdir=TB;
+    node [shape=record, fontname="Helvetica", fontsize=11];
+
+    SelfCheck [label="{SelfCheck|+ main(String[]) : void\l- runUnitChecks() : void\l- runDataDriven() : void\l- runInteractive() : void\l}"];
+    ApprovalRouter [label="{ApprovalRouter|+ FINANCE_LIMIT : long = 500000\l+ STANDARD_LIMIT : long = 50000\l|+ route(long, boolean, RiskLevel, boolean) : ApprovalRoute\l+ addStandardEligibility(long, boolean, RiskLevel, boolean) : boolean\l- checkContract(long, RiskLevel) : void\l- requiresSecurityReview(boolean) : boolean\l- requiresDirectorReview(RiskLevel) : boolean\l- requiresFinanceReview(long) : boolean\l- requiresFastTrack(long, boolean) : boolean\l- requiresStandard(long, boolean, RiskLevel, boolean) : boolean\l}"];
+    ApprovalRoute [label="{«enum»\lApprovalRoute|STANDARD\lFAST_TRACK\lFINANCE_REVIEW\lDIRECTOR_REVIEW\lSECURITY_REVIEW\l}"];
+    RiskLevel [label="{«enum»\lRiskLevel|LOW\lMEDIUM\lHIGH\l}"];
+
+    SelfCheck -> ApprovalRouter [label="uses"];
+    ApprovalRouter -> ApprovalRoute [label="returns"];
+    ApprovalRouter -> RiskLevel [label="uses"];
+}

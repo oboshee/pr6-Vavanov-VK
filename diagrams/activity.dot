@@ -1,0 +1,40 @@
+digraph Activity {
+    rankdir=TB;
+    node [fontname="Helvetica", fontsize=11];
+    edge [fontname="Helvetica", fontsize=10];
+
+    start   [shape=ellipse, label="Начало"];
+    input   [shape=parallelogram, label="Получить параметры заявки\n(amount, urgent, risk, personal)"];
+    check   [shape=box, style="rounded", label="Проверить защитные условия\namount >= 0 и risk != null"];
+    ok      [shape=diamond, label="Условия\nвыполнены?"];
+    throwIAE[shape=box, style="rounded", color=red, label="Выбросить IllegalArgumentException\n(Ошибка: ...)"];
+
+    r1 [shape=diamond, label="R1: Есть\nперсональные данные?"];
+    r2 [shape=diamond, label="R2: Риск HIGH?"];
+    r3 [shape=diamond, label="R3: Сумма >=\nFINANCE_LIMIT (500000)?"];
+    r4 [shape=diamond, label="R4: Срочная и\nсумма < FINANCE_LIMIT?"];
+    r5 [shape=diamond, label="R5: amount < 50000\nAND !urgent AND LOW\nAND !personal?"];
+    r6 [shape=box, label="R6: FINANCE_REVIEW\n(страховочный)"];
+
+    out [shape=box, style="rounded", label="Вернуть маршрут согласования"];
+    end [shape=ellipse, label="Завершение"];
+
+    start -> input -> check -> ok;
+    ok -> throwIAE [label="нет"];
+    ok -> r1       [label="да"];
+
+    r1 -> out [label="да SECURITY_REVIEW"];
+    r1 -> r2  [label="нет"];
+    r2 -> out [label="да DIRECTOR_REVIEW"];
+    r2 -> r3  [label="нет"];
+    r3 -> out [label="да FINANCE_REVIEW"];
+    r3 -> r4  [label="нет"];
+    r4 -> out [label="да FAST_TRACK"];
+    r4 -> r5  [label="нет"];
+    r5 -> out [label="да STANDARD"];
+    r5 -> r6  [label="нет"];
+    r6 -> out;
+
+    throwIAE -> end;
+    out -> end;
+}

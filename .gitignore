@@ -1,0 +1,7 @@
+out/
+.idea/
+*.iml
+*.class
+sources.txt
+*.log
+.DS_Store

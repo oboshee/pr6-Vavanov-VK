@@ -1,0 +1,214 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="838pt" height="1160pt" viewBox="0.00 0.00 838.00 1160.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1156.2)">
+<title>Activity</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-1156.2 833.87,-1156.2 833.87,4 -4,4"/>
+<!-- start -->
+<g id="node1" class="node">
+<title>start</title>
+<ellipse fill="none" stroke="black" cx="309.4" cy="-1134.2" rx="32.59" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="309.4" y="-1130.9" font-family="Helvetica,sans-Serif" font-size="11.00">Начало</text>
+</g>
+<!-- input -->
+<g id="node2" class="node">
+<title>input</title>
+<polygon fill="none" stroke="black" points="484.45,-1079.2 205.99,-1079.2 134.35,-1010.4 412.82,-1010.4 484.45,-1079.2"/>
+<text xml:space="preserve" text-anchor="middle" x="309.4" y="-1048.1" font-family="Helvetica,sans-Serif" font-size="11.00">Получить параметры заявки</text>
+<text xml:space="preserve" text-anchor="middle" x="309.4" y="-1034.9" font-family="Helvetica,sans-Serif" font-size="11.00">(amount, urgent, risk, personal)</text>
+</g>
+<!-- start&#45;&gt;input -->
+<g id="edge1" class="edge">
+<title>start-&gt;input</title>
+<path fill="none" stroke="black" d="M309.4,-1115.93C309.4,-1108.66 309.4,-1099.82 309.4,-1090.9"/>
+<polygon fill="black" stroke="black" points="312.9,-1091.18 309.4,-1081.18 305.9,-1091.18 312.9,-1091.18"/>
+</g>
+<!-- check -->
+<g id="node3" class="node">
+<title>check</title>
+<path fill="none" stroke="black" d="M381.81,-973.4C381.81,-973.4 237,-973.4 237,-973.4 231,-973.4 225,-967.4 225,-961.4 225,-961.4 225,-949.4 225,-949.4 225,-943.4 231,-937.4 237,-937.4 237,-937.4 381.81,-937.4 381.81,-937.4 387.81,-937.4 393.81,-943.4 393.81,-949.4 393.81,-949.4 393.81,-961.4 393.81,-961.4 393.81,-967.4 387.81,-973.4 381.81,-973.4"/>
+<text xml:space="preserve" text-anchor="middle" x="309.4" y="-958.7" font-family="Helvetica,sans-Serif" font-size="11.00">Проверить защитные условия</text>
+<text xml:space="preserve" text-anchor="middle" x="309.4" y="-945.5" font-family="Helvetica,sans-Serif" font-size="11.00">amount &gt;= 0 и risk != null</text>
+</g>
+<!-- input&#45;&gt;check -->
+<g id="edge2" class="edge">
+<title>input-&gt;check</title>
+<path fill="none" stroke="black" d="M309.4,-1010.01C309.4,-1001.72 309.4,-992.92 309.4,-984.9"/>
+<polygon fill="black" stroke="black" points="312.9,-985.01 309.4,-975.01 305.9,-985.01 312.9,-985.01"/>
+</g>
+<!-- ok -->
+<g id="node4" class="node">
+<title>ok</title>
+<polygon fill="none" stroke="black" points="309.4,-900.4 232.27,-866 309.4,-831.6 386.53,-866 309.4,-900.4"/>
+<text xml:space="preserve" text-anchor="middle" x="309.4" y="-869.3" font-family="Helvetica,sans-Serif" font-size="11.00">Условия</text>
+<text xml:space="preserve" text-anchor="middle" x="309.4" y="-856.1" font-family="Helvetica,sans-Serif" font-size="11.00">выполнены?</text>
+</g>
+<!-- check&#45;&gt;ok -->
+<g id="edge3" class="edge">
+<title>check-&gt;ok</title>
+<path fill="none" stroke="black" d="M309.4,-937.13C309.4,-929.86 309.4,-921.02 309.4,-912.1"/>
+<polygon fill="black" stroke="black" points="312.9,-912.38 309.4,-902.38 305.9,-912.38 312.9,-912.38"/>
+</g>
+<!-- throwIAE -->
+<g id="node5" class="node">
+<title>throwIAE</title>
+<path fill="none" stroke="red" d="M186.81,-696.8C186.81,-696.8 12,-696.8 12,-696.8 6,-696.8 0,-690.8 0,-684.8 0,-684.8 0,-672.8 0,-672.8 0,-666.8 6,-660.8 12,-660.8 12,-660.8 186.81,-660.8 186.81,-660.8 192.81,-660.8 198.81,-666.8 198.81,-672.8 198.81,-672.8 198.81,-684.8 198.81,-684.8 198.81,-690.8 192.81,-696.8 186.81,-696.8"/>
+<text xml:space="preserve" text-anchor="middle" x="99.4" y="-682.1" font-family="Helvetica,sans-Serif" font-size="11.00">Выбросить IllegalArgumentException</text>
+<text xml:space="preserve" text-anchor="middle" x="99.4" y="-668.9" font-family="Helvetica,sans-Serif" font-size="11.00">(Ошибка: ...)</text>
+</g>
+<!-- ok&#45;&gt;throwIAE -->
+<g id="edge4" class="edge">
+<title>ok-&gt;throwIAE</title>
+<path fill="none" stroke="black" d="M284.07,-842.66C244.64,-807.88 168.84,-741.04 127.68,-704.73"/>
+<polygon fill="black" stroke="black" points="130.15,-702.25 120.34,-698.26 125.52,-707.5 130.15,-702.25"/>
+<text xml:space="preserve" text-anchor="middle" x="256.51" y="-804.6" font-family="Helvetica,sans-Serif" font-size="10.00">нет</text>
+</g>
+<!-- r1 -->
+<g id="node6" class="node">
+<title>r1</title>
+<polygon fill="none" stroke="black" points="547.4,-783.6 412.21,-749.2 547.4,-714.8 682.6,-749.2 547.4,-783.6"/>
+<text xml:space="preserve" text-anchor="middle" x="547.4" y="-752.5" font-family="Helvetica,sans-Serif" font-size="11.00">R1: Есть</text>
+<text xml:space="preserve" text-anchor="middle" x="547.4" y="-739.3" font-family="Helvetica,sans-Serif" font-size="11.00">персональные данные?</text>
+</g>
+<!-- ok&#45;&gt;r1 -->
+<g id="edge5" class="edge">
+<title>ok-&gt;r1</title>
+<path fill="none" stroke="black" d="M345.81,-847.44C384.59,-828.73 446.46,-798.89 491.44,-777.2"/>
+<polygon fill="black" stroke="black" points="492.77,-780.44 500.26,-772.94 489.73,-774.13 492.77,-780.44"/>
+<text xml:space="preserve" text-anchor="middle" x="441.1" y="-804.6" font-family="Helvetica,sans-Serif" font-size="10.00">да</text>
+</g>
+<!-- end -->
+<g id="node13" class="node">
+<title>end</title>
+<ellipse fill="none" stroke="black" cx="63.4" cy="-18" rx="47.71" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="63.4" y="-14.7" font-family="Helvetica,sans-Serif" font-size="11.00">Завершение</text>
+</g>
+<!-- throwIAE&#45;&gt;end -->
+<g id="edge17" class="edge">
+<title>throwIAE-&gt;end</title>
+<path fill="none" stroke="black" d="M84.22,-660.43C70.15,-642.51 51.4,-613.12 51.4,-583.8 51.4,-583.8 51.4,-583.8 51.4,-90 51.4,-75.83 53.75,-60.3 56.37,-47.38"/>
+<polygon fill="black" stroke="black" points="59.74,-48.37 58.47,-37.85 52.91,-46.86 59.74,-48.37"/>
+</g>
+<!-- r2 -->
+<g id="node7" class="node">
+<title>r2</title>
+<polygon fill="none" stroke="black" points="547.4,-642.8 462.28,-624.8 547.4,-606.8 632.53,-624.8 547.4,-642.8"/>
+<text xml:space="preserve" text-anchor="middle" x="547.4" y="-621.5" font-family="Helvetica,sans-Serif" font-size="11.00">R2: Риск HIGH?</text>
+</g>
+<!-- r1&#45;&gt;r2 -->
+<g id="edge7" class="edge">
+<title>r1-&gt;r2</title>
+<path fill="none" stroke="black" d="M547.4,-714.43C547.4,-695.69 547.4,-672.62 547.4,-654.71"/>
+<polygon fill="black" stroke="black" points="550.9,-654.77 547.4,-644.77 543.9,-654.77 550.9,-654.77"/>
+<text xml:space="preserve" text-anchor="middle" x="555.74" y="-675.8" font-family="Helvetica,sans-Serif" font-size="10.00">нет</text>
+</g>
+<!-- out -->
+<g id="node12" class="node">
+<title>out</title>
+<path fill="none" stroke="black" d="M447.92,-109C447.92,-109 290.89,-109 290.89,-109 284.89,-109 278.89,-103 278.89,-97 278.89,-97 278.89,-85 278.89,-85 278.89,-79 284.89,-73 290.89,-73 290.89,-73 447.92,-73 447.92,-73 453.92,-73 459.92,-79 459.92,-85 459.92,-85 459.92,-97 459.92,-97 459.92,-103 453.92,-109 447.92,-109"/>
+<text xml:space="preserve" text-anchor="middle" x="369.4" y="-87.7" font-family="Helvetica,sans-Serif" font-size="11.00">Вернуть маршрут согласования</text>
+</g>
+<!-- r1&#45;&gt;out -->
+<g id="edge6" class="edge">
+<title>r1-&gt;out</title>
+<path fill="none" stroke="black" d="M612.31,-730.83C661.4,-713.31 720.4,-680.8 720.4,-625.8 720.4,-625.8 720.4,-625.8 720.4,-163 720.4,-111.84 575.33,-97.11 471.72,-93.12"/>
+<polygon fill="black" stroke="black" points="471.88,-89.63 461.76,-92.77 471.63,-96.62 471.88,-89.63"/>
+<text xml:space="preserve" text-anchor="middle" x="775.13" y="-404.6" font-family="Helvetica,sans-Serif" font-size="10.00">да SECURITY_REVIEW</text>
+</g>
+<!-- r3 -->
+<g id="node8" class="node">
+<title>r3</title>
+<polygon fill="none" stroke="black" points="414.4,-558.8 262.69,-524.4 414.4,-490 566.12,-524.4 414.4,-558.8"/>
+<text xml:space="preserve" text-anchor="middle" x="414.4" y="-527.7" font-family="Helvetica,sans-Serif" font-size="11.00">R3: Сумма &gt;=</text>
+<text xml:space="preserve" text-anchor="middle" x="414.4" y="-514.5" font-family="Helvetica,sans-Serif" font-size="11.00">FINANCE_LIMIT (500000)?</text>
+</g>
+<!-- r2&#45;&gt;r3 -->
+<g id="edge9" class="edge">
+<title>r2-&gt;r3</title>
+<path fill="none" stroke="black" d="M529.19,-610.32C511.02,-596.88 482.42,-575.72 458.31,-557.89"/>
+<polygon fill="black" stroke="black" points="460.66,-555.27 450.54,-552.14 456.5,-560.9 460.66,-555.27"/>
+<text xml:space="preserve" text-anchor="middle" x="505.06" y="-579.8" font-family="Helvetica,sans-Serif" font-size="10.00">нет</text>
+</g>
+<!-- r2&#45;&gt;out -->
+<g id="edge8" class="edge">
+<title>r2-&gt;out</title>
+<path fill="none" stroke="black" d="M559.51,-609.17C573.43,-590.8 594.4,-557.77 594.4,-525.4 594.4,-525.4 594.4,-525.4 594.4,-163 594.4,-135.14 530.87,-116.84 471.33,-105.81"/>
+<polygon fill="black" stroke="black" points="472.22,-102.41 461.76,-104.1 470.99,-109.3 472.22,-102.41"/>
+<text xml:space="preserve" text-anchor="middle" x="649.96" y="-346.2" font-family="Helvetica,sans-Serif" font-size="10.00">да DIRECTOR_REVIEW</text>
+</g>
+<!-- r4 -->
+<g id="node9" class="node">
+<title>r4</title>
+<polygon fill="none" stroke="black" points="287.4,-442 139.68,-407.6 287.4,-373.2 435.13,-407.6 287.4,-442"/>
+<text xml:space="preserve" text-anchor="middle" x="287.4" y="-410.9" font-family="Helvetica,sans-Serif" font-size="11.00">R4: Срочная и</text>
+<text xml:space="preserve" text-anchor="middle" x="287.4" y="-397.7" font-family="Helvetica,sans-Serif" font-size="11.00">сумма &lt; FINANCE_LIMIT?</text>
+</g>
+<!-- r3&#45;&gt;r4 -->
+<g id="edge11" class="edge">
+<title>r3-&gt;r4</title>
+<path fill="none" stroke="black" d="M384.63,-496.48C366.95,-480.51 344.37,-460.09 325.41,-442.96"/>
+<polygon fill="black" stroke="black" points="327.88,-440.47 318.11,-436.36 323.19,-445.66 327.88,-440.47"/>
+<text xml:space="preserve" text-anchor="middle" x="363.05" y="-463" font-family="Helvetica,sans-Serif" font-size="10.00">нет</text>
+</g>
+<!-- r3&#45;&gt;out -->
+<g id="edge10" class="edge">
+<title>r3-&gt;out</title>
+<path fill="none" stroke="black" d="M434.62,-494.16C448.11,-471.78 463.4,-439.59 463.4,-408.6 463.4,-408.6 463.4,-408.6 463.4,-163 463.4,-141.85 448.06,-126.2 429.78,-115.06"/>
+<polygon fill="black" stroke="black" points="431.47,-112 421.03,-110.22 428.08,-118.12 431.47,-112"/>
+<text xml:space="preserve" text-anchor="middle" x="514.8" y="-274.6" font-family="Helvetica,sans-Serif" font-size="10.00">да FINANCE_REVIEW</text>
+</g>
+<!-- r5 -->
+<g id="node10" class="node">
+<title>r5</title>
+<polygon fill="none" stroke="black" points="210.4,-325.2 79.48,-277.6 210.4,-230 341.32,-277.6 210.4,-325.2"/>
+<text xml:space="preserve" text-anchor="middle" x="210.4" y="-287.5" font-family="Helvetica,sans-Serif" font-size="11.00">R5: amount &lt; 50000</text>
+<text xml:space="preserve" text-anchor="middle" x="210.4" y="-274.3" font-family="Helvetica,sans-Serif" font-size="11.00">AND !urgent AND LOW</text>
+<text xml:space="preserve" text-anchor="middle" x="210.4" y="-261.1" font-family="Helvetica,sans-Serif" font-size="11.00">AND !personal?</text>
+</g>
+<!-- r4&#45;&gt;r5 -->
+<g id="edge13" class="edge">
+<title>r4-&gt;r5</title>
+<path fill="none" stroke="black" d="M269.54,-376.91C260.56,-361.97 249.44,-343.49 239.28,-326.6"/>
+<polygon fill="black" stroke="black" points="242.36,-324.94 234.21,-318.17 236.36,-328.54 242.36,-324.94"/>
+<text xml:space="preserve" text-anchor="middle" x="264.13" y="-346.2" font-family="Helvetica,sans-Serif" font-size="10.00">нет</text>
+</g>
+<!-- r4&#45;&gt;out -->
+<g id="edge12" class="edge">
+<title>r4-&gt;out</title>
+<path fill="none" stroke="black" d="M314.96,-379.38C328.08,-364.65 342.58,-345.36 350.4,-325.2 364.57,-288.66 368.18,-174.7 369.09,-120.8"/>
+<polygon fill="black" stroke="black" points="372.59,-120.93 369.24,-110.88 365.59,-120.83 372.59,-120.93"/>
+<text xml:space="preserve" text-anchor="middle" x="405.93" y="-203" font-family="Helvetica,sans-Serif" font-size="10.00">да FAST_TRACK</text>
+</g>
+<!-- r6 -->
+<g id="node11" class="node">
+<title>r6</title>
+<polygon fill="none" stroke="black" points="236.39,-182 102.42,-182 102.42,-146 236.39,-146 236.39,-182"/>
+<text xml:space="preserve" text-anchor="middle" x="169.4" y="-167.3" font-family="Helvetica,sans-Serif" font-size="11.00">R6: FINANCE_REVIEW</text>
+<text xml:space="preserve" text-anchor="middle" x="169.4" y="-154.1" font-family="Helvetica,sans-Serif" font-size="11.00">(страховочный)</text>
+</g>
+<!-- r5&#45;&gt;r6 -->
+<g id="edge15" class="edge">
+<title>r5-&gt;r6</title>
+<path fill="none" stroke="black" d="M195.14,-235.04C189.96,-220.95 184.3,-205.56 179.62,-192.81"/>
+<polygon fill="black" stroke="black" points="183.04,-191.97 176.31,-183.79 176.47,-194.39 183.04,-191.97"/>
+<text xml:space="preserve" text-anchor="middle" x="194.57" y="-203" font-family="Helvetica,sans-Serif" font-size="10.00">нет</text>
+</g>
+<!-- r5&#45;&gt;out -->
+<g id="edge14" class="edge">
+<title>r5-&gt;out</title>
+<path fill="none" stroke="black" d="M227.95,-235.96C241.23,-208.4 261.45,-172.33 286.51,-146 297.75,-134.18 312.05,-123.7 325.61,-115.2"/>
+<polygon fill="black" stroke="black" points="327.23,-118.3 333.99,-110.14 323.62,-112.31 327.23,-118.3"/>
+<text xml:space="preserve" text-anchor="middle" x="320.95" y="-161" font-family="Helvetica,sans-Serif" font-size="10.00">да STANDARD</text>
+</g>
+<!-- r6&#45;&gt;out -->
+<g id="edge16" class="edge">
+<title>r6-&gt;out</title>
+<path fill="none" stroke="black" d="M210.35,-145.65C225.36,-139.5 242.56,-132.69 258.4,-127 271.76,-122.2 286.14,-117.4 299.98,-112.96"/>
+<polygon fill="black" stroke="black" points="301.01,-116.31 309.49,-109.95 298.9,-109.63 301.01,-116.31"/>
+</g>
+<!-- out&#45;&gt;end -->
+<g id="edge18" class="edge">
+<title>out-&gt;end</title>
+<path fill="none" stroke="black" d="M294.15,-72.54C238.17,-59.55 163.27,-42.17 114.21,-30.79"/>
+<polygon fill="black" stroke="black" points="115.24,-27.43 104.71,-28.58 113.66,-34.25 115.24,-27.43"/>
+</g>
+</g>
+</svg>
